@@ -12,25 +12,56 @@ const promptManager = async () => {
       type: "input",
       name: "name",
       message: "What is your team manager's full name?",
+      validate: async (nameInput) => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log('Please enter a name!');
+          return false;
+        }
+      }
     },
     {
       type: "input",
       name: "id",
       message: "What is your team manager's ID?",
+      validate: async (idInput)  => {
+        if (idInput) {
+          return true;
+        } else {
+          console.log('Please enter the employee ID!');
+          return false;
+        }
+      }
     },
     {
       type: "input",
       name: "email",
       message: "What is your team manager's email?",
+      validate: async (emailInput) => {
+        if (emailInput) {
+          return true;
+        } else {
+          console.log('Please enter an email!');
+          return false;
+        }
+      }
     },
     {
       type: "input",
       name: "officeNumber",
       message: "What is your team manager's office number?",
+      validate: async (nameInput) => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log('Please enter an office number!');
+          return false;
+        }
+      }
     },
   ]);
   let manager = new Manager(res.name, res.id, res.email, res.officeNumber);
-  //   console.log(manager);
   employeeArr.push(manager);
   addEmployee();
 };
@@ -55,25 +86,56 @@ const promptEngineer = async () => {
       type: "input",
       name: "name",
       message: "What is your Engineer's full name?",
+      validate: async (nameInput) => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log('Please enter a name!');
+          return false;
+        }
+      }
     },
     {
       type: "input",
       name: "id",
       message: "What is your Engineer's ID?",
+      validate: async (idInput) => {
+        if (idInput) {
+          return true;
+        } else {
+          console.log('Please enter the employee ID!');
+          return false;
+        }
+      }
     },
     {
       type: "input",
       name: "email",
       message: "What is your Engineer's email?",
+      validate: async (emailInput) => {
+        if (emailInput) {
+          return true;
+        } else {
+          console.log('Please enter an email!');
+          return false;
+        }
+      }
     },
     {
       type: "input",
       name: "github",
       message: "What is your Engineer's GitHub username?",
+      validate: async (githubInput) => {
+        if (githubInput) {
+          return true;
+        } else {
+          console.log('Please enter a GitHub!');
+          return false;
+        }
+      }
     },
   ]);
   let engineer = new Engineer(res.name, res.id, res.email, res.github);
-  //   console.log(engineer);
   employeeArr.push(engineer);
   addEmployee();
 };
@@ -83,25 +145,56 @@ const promptIntern = async () => {
       type: "input",
       name: "name",
       message: "What is your Intern's full name?",
+      validate: async (nameInput) => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log('Please enter a name!');
+          return false;
+        }
+      }
     },
     {
       type: "input",
       name: "id",
       message: "What is your Intern's ID?",
+      validate: async (idInput) => {
+        if (idInput) {
+          return true;
+        } else {
+          console.log('Please enter the employee ID!');
+          return false;
+        }
+      }
     },
     {
       type: "input",
       name: "email",
       message: "What is your Intern's email?",
+      validate: async (emailInput) => {
+        if (emailInput) {
+          return true;
+        } else {
+          console.log('Please enter an email!');
+          return false;
+        }
+      }
     },
     {
       type: "input",
       name: "school",
       message: "Where is your intern in school?",
+      validate: async (schoolInput) => {
+        if (schoolInput) {
+          return true;
+        } else {
+          console.log('Please enter the name of a school!');
+          return false;
+        }
+      }
     },
   ]);
   let intern = new Intern(res.name, res.id, res.email, res.school);
-  //   console.log(intern);
   employeeArr.push(intern);
   addEmployee();
 };
