@@ -3,7 +3,8 @@ const inquirer = require("inquirer");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const { Console } = require("console");
+
+const employeeArr = [];
 
 const promptManager = async () => {
   let res = await inquirer.prompt([
@@ -28,8 +29,9 @@ const promptManager = async () => {
       message: "What is your team manager's office number?",
     },
   ]);
-  let manager = new Manager (res.name, res.id, res.email, res.officeNumber);
-  console.log(manager);
+  let manager = new Manager(res.name, res.id, res.email, res.officeNumber);
+  //   console.log(manager);
+  employeeArr.push(manager);
   addEmployee();
 };
 const addEmployee = async () => {
@@ -70,8 +72,9 @@ const promptEngineer = async () => {
       message: "What is your Engineer's GitHub username?",
     },
   ]);
-  let engineer = new Engineer (res.name, res.id, res.email, res.github);
-  console.log(engineer);
+  let engineer = new Engineer(res.name, res.id, res.email, res.github);
+  //   console.log(engineer);
+  employeeArr.push(engineer);
   addEmployee();
 };
 const promptIntern = async () => {
@@ -97,12 +100,13 @@ const promptIntern = async () => {
       message: "Where is your intern in school?",
     },
   ]);
-  let intern = new Intern (res.name, res.id, res.email, res.school);
-  console.log(intern)
+  let intern = new Intern(res.name, res.id, res.email, res.school);
+  //   console.log(intern);
+  employeeArr.push(intern);
   addEmployee();
 };
 const generatePage = () => {
-  console.log("generate page");
+  console.log(employeeArr);
 };
 
 promptManager();
