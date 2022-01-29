@@ -63,7 +63,6 @@ const promptManager = async () => {
   },
 ]);
 let manager = new Manager(res.name, res.id, res.email, res.officeNumber);
-console.log(manager.getRole());
 employeeArr.push(manager);
 addEmployee();
 };
@@ -142,7 +141,6 @@ const promptEngineer = async () => {
   ]);
   let engineer = new Engineer(res.name, res.id, res.email, res.github);
   employeeArr.push(engineer);
-  console.log(engineer.getRole());
   addEmployee();
 };
 const promptIntern = async () => {
@@ -202,7 +200,6 @@ const promptIntern = async () => {
   ]);
   let intern = new Intern(res.name, res.id, res.email, res.school);
   employeeArr.push(intern);
-  console.log(intern.getRole());
   addEmployee();
 };
 

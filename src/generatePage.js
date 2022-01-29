@@ -25,7 +25,7 @@ const generatePage = (employeeArr) => {
       <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-cogs"></i> ${title}</h6>
       <p class="card-text">Employee ID: ${data.getId()}</p>
       <p class ="card-text"><a href="mailto:${data.getEmail()}">${data.getEmail()}</a></p>
-      <p class ="card-text">GitHub: <a href="https://www.github.com/${data.getGithub()}">${data.getGithub()}</a></p>
+      <p class ="card-text">GitHub: <a href="https://www.github.com/${data.getGithub()}" target="_blank">${data.getGithub()}</a></p>
       </div>
             </div>
             `;
