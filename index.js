@@ -82,9 +82,9 @@ const addEmployee = async () => {
   } else if (res.xRoads === "Add Intern") {
     promptIntern();
   } else {
-    generatePage(employeeArr);
-    // let htmlFile = generatePage(employeeArr);
-    // writeFile("./dist/index.html", htmlFile);
+    // generatePage(employeeArr);
+    let htmlFile = await generatePage(employeeArr);
+    writeFile("./dist/index.html", htmlFile);
   }
 };
 const promptEngineer = async () => {
@@ -208,11 +208,11 @@ const promptIntern = async () => {
   addEmployee();
 };
 
-// const writeFile = (fileName, res) => {
-//   fs.writeFile("./dist/index.html", res, (err) => {
-//     err ? console.error(err) : console.log("HTML created!");
-//   });
-// };
+const writeFile = (fileName, res) => {
+  fs.writeFile("./dist/index.html", res, (err) => {
+    err ? console.error(err) : console.log("HTML created!");
+  });
+};
 
 // const promptManager = async () => {
   // let res = await inquirer.prompt(managerQ);
