@@ -7,37 +7,37 @@ const generatePage = (employeeArr) => {
 
     if (title === "Manager") {
       return `
-      <div class ="col-3 card">
+      <div class ="col-3 card p-2 m-2">
       <div class ="card-body">
-      <h5 class ="card-title">${data.getName()}</h5>
+      <h5 class ="card-title p-2 bg-primary text-white">${data.getName()}</h5>
       <h6 class="card-subtitle mb-2 text-muted">${title}</h6>
-      <p class="card-text">${data.getId()}</p>
-      <a href="#" class="card-link">${data.getEmail()}</a>
-      <p class="card-text">${data.getOfficeNumber()}</p>
+      <p class="card-text">Employee ID: ${data.getId()}</p>
+      <p class ="card-text"><a href="mailto:${data.getEmail()}">${data.getEmail()}</a></p>
+      <p class="card-text">Phone: ${data.getOfficeNumber()}</p>
       </div>
             </div>
             `;
     } else if (title === "Engineer") {
       return `
-      <div class ="col-3 card">
+      <div class ="col-3 card p-2 m-2">
       <div class ="card-body">
-      <h5 class ="card-title">${data.getName()}</h5>
+      <h5 class ="card-title p-2 bg-primary text-white">${data.getName()}</h5>
       <h6 class="card-subtitle mb-2 text-muted">${title}</h6>
-      <p class="card-text">${data.getId()}</p>
-      <a href="#" class="card-link">${data.getEmail()}</a>
-      <a href="#" class="card-link">${data.getGithub()}</a>
+      <p class="card-text">Employee ID: ${data.getId()}</p>
+      <p class ="card-text"><a href="mailto:${data.getEmail()}">${data.getEmail()}</a></p>
+      <p class ="card-text">GitHub: <a href="https://www.github.com/${data.getGithub()}">${data.getGithub()}</a></p>
       </div>
             </div>
             `;
     } else {
       return `
-      <div class ="col-3 card">
+      <div class ="col-3 card p-2 m-2">
       <div class ="card-body">
-      <h5 class ="card-title">${data.getName()}</h5>
+      <h5 class ="card-title p-2 bg-primary text-white">${data.getName()}</h5>
       <h6 class="card-subtitle mb-2 text-muted">${title}</h6>
-      <p class="card-text">${data.getId()}</p>
-      <a href="#" class="card-link">${data.getEmail()}</a>
-      <p class="card-text">${data.school()}</p>
+      <p class="card-text">Employee ID: ${data.getId()}</p>
+      <p class ="card-text"><a href="mailto:${data.getEmail()}">${data.getEmail()}</a></p>
+      <p class="card-text">University: ${data.getSchool()}</p>
       </div>
             </div>
             `;
@@ -65,11 +65,11 @@ module.exports = (templateData) => {
 </head>
 <body>
     <header class="hero">
-        <h1 class="text-light text-center p-3">Header is here!</h1>
+    <h1 class="bg-primary text-white text-center p-3">My Team Profile</h1>
       </header>
       <main class="container">
-        <div class="row">
-            ${generatePage(templateData)}
+      <div class="row d-flex justify-content-around align-items-center p-2">
+            ${generatePage(templateData).join('')}
         </div>
       </main>
 
