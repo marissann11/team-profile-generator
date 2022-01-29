@@ -9,7 +9,6 @@ const employeeArr = [];
 
 const promptManager = async () => {
   let res = await inquirer.prompt([
-// const managerQ = [
   {
     type: "input",
     name: "name",
@@ -82,7 +81,6 @@ const addEmployee = async () => {
   } else if (res.xRoads === "Add Intern") {
     promptIntern();
   } else {
-    // generatePage(employeeArr); what do i do here
     let htmlFile = await generatePage(employeeArr);
     writeFile("./dist/index.html", htmlFile);
   }
@@ -213,13 +211,5 @@ const writeFile = (fileName, res) => {
     err ? console.error(err) : console.log("HTML created!");
   });
 };
-
-// const promptManager = async () => {
-  // let res = await inquirer.prompt(managerQ);
-  // let res2 = await addEmployee(res);
-  // let htmlFile = await generatePage(employeeArr);
-  // return await writeFile("./dist/index.html", htmlFile);
-// };
-// something like this idk????
 
 promptManager();
