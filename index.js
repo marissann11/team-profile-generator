@@ -66,6 +66,7 @@ let manager = new Manager(res.name, res.id, res.email, res.officeNumber);
 employeeArr.push(manager);
 addEmployee();
 };
+// This is the crossroads prompt between each added employee where user can continue adding or be finished
 const addEmployee = async () => {
   let res = await inquirer.prompt([
     {
@@ -80,6 +81,7 @@ const addEmployee = async () => {
   } else if (res.xRoads === "Add Intern") {
     promptIntern();
   } else {
+    // If user is done, writeFile function is called with template generated on generatePage.js
     let htmlFile = await generatePage(employeeArr);
     writeFile("./dist/index.html", htmlFile);
   }
